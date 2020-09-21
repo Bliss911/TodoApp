@@ -17,12 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',"TodoController@index")->name('todoDashboard');
 
-
 Route::post('/create','TodoController@create')->name('todo');
-//
-//Route::post('/create',function (Request $request){
-//    dd($request);
-//})->name('todo');
+
+Route::get('delete-records','TodoController@destroy');
+Route::get('delete/{id}','TodoController@destroy');
 
 
+Route::put('edit/{id}','TodoController@edit');
 
